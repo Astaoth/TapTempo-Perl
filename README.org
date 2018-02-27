@@ -1,5 +1,5 @@
 * Description
-  This project is a port of C++ TapTempo in Perl.
+  This project is a port of [[https://github.com/moleculext/taptempo/][C++ TapTempo]] in Perl.
   The purpose is only educational to learn to do some programming with Perl 5.
 
 * Using it
