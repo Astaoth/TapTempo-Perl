@@ -1,0 +1,8 @@
+* Description
+  This project is a port of C++ TapTempo in Perl.
+  The purpose is only educational to learn to do some programming with Perl 5.
+
+* Using it
+  With a classic GNU/Linux distribution, everything required is already on the system. Make this program executable and then run it as a classic script.
+
+
