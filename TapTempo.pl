@@ -91,6 +91,8 @@ while (defined(my $key = <STDIN>))
     if (($times[($#times)] - $times[($#times-1)]) > $reset)
     {
         shift @times while (scalar(@times) > 1);
+        say "Tempo Reset";
+        next;
     }
 
     # Ne conserver que les $sample derniers échantillons
