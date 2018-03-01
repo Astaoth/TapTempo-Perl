@@ -8,7 +8,7 @@ use Getopt::Long;
 
 Getopt::Long::Configure ("bundling", "ignorecase_always");
 
-my $version = "a02";
+my $version = "a03";
 my ($debug, $help, $show_version, $precision, $sample, $reset, $key, $tempo, $t) = (1, 0, 0, 0, 5, 5, '', '', '');
 my @times = ();
 #$key : touche appuyé par l'utilisteur
