@@ -9,7 +9,7 @@ use Getopt::Long;
 Getopt::Long::Configure ("bundling", "ignorecase_always");
 
 my $version = "a02";
-my ($debug, $help, $show_version, $precision, $sample, $reset, $key, $tempo, $t) = (0, 0, 0, 0, 5, 5, '', '', '');
+my ($debug, $help, $show_version, $precision, $sample, $reset, $key, $tempo, $t) = (1, 0, 0, 0, 5, 5, '', '', '');
 my @times = ();
 #$key : touche appuyé par l'utilisteur
 #@times : contient les "dates" des frappes
@@ -109,11 +109,18 @@ while (defined(my $key = <STDIN>))
     }
     $timesMean = ($timesMean / scalar(@times));
     say "DEBUG - timesMean final : $timesMean" if $debug;
-    $tempo = (60/$timesMean);
-    say "DEBUG - tempo : $tempo" if $debug;
+    if (scalar(@times) > 1)
+    {
+	$tempo = (60/$timesMean);
+	say "DEBUG - tempo : $tempo" if $debug;
 
-    #Affichage du $tempo avec la $precision demandée
-    printf("Tempo : %.${precision}f bpm", $tempo);
+	#Affichage du $tempo avec la $precision demandée
+	printf("Tempo : %.${precision}f bpm", $tempo);
+    }
+    else
+    {
+	say "Nombre d'échantillons récents insuffisants.";
+    }
 }
 
 exit 0;
